@@ -2,6 +2,7 @@ const express = require ("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const contactRoutes = require('./routes/contactRoutes')
 
 const app = express();
 const port = 3001;
@@ -10,7 +11,12 @@ dotenv.config();
 app.use(express.json());
 app.use(cors());
 
+app.use('/contacts', contactRoutes );
+
+
+
 const {URL} = process.env;
+
 
 mongoose.connect(URL)
     .then(() => {console.log('Connected to the database')})

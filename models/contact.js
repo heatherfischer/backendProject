@@ -41,7 +41,7 @@ const contactSchema = new Schema ({
     salesNotes: {type: String,
                 maxlength:200}
 
-})
+});
 
 const Contact = model ('Contact', contactSchema); 
 

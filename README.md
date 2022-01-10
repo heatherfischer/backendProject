@@ -1,12 +1,10 @@
-This is a rest API for a Customer Relationship Management tool for an imaginary solar PV energy company based in Germany.
+This project is review for the backend course module I completed with Digital Career Institute (DCI). 
+
+I built a rest API for a Customer Relationship Management tool for an imaginary solar PV energy company based in Germany.
 The server is set up using ExpressJS.
-Http Request routes are created, which have access to a MongoDB database collection. 
-CRUD operations are used to add/delete/update/read contacts from the database.
+The http request routes are connected with a MongoDB database.
 
-The imaginary company could use this CRM to maintain their customer contacts, store information about them, update contacts or update customer notes, 
-and maintain customer lists. 
-
-Routes enable the follwing CRUD operations
+Routes enable the following CRUD operations
 -Create a contact
 -Read a list of all contacts
 -Read a list of select contacts

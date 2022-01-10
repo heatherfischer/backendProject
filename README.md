@@ -1,4 +1,4 @@
-This is the backend for a Customer Relationship Management tool for an imaginary solar PV energy company based in Germany.
+This is a rest API for a Customer Relationship Management tool for an imaginary solar PV energy company based in Germany.
 The server is set up using ExpressJS.
 Http Request routes are created, which have access to a MongoDB database collection. 
 CRUD operations are used to add/delete/update/read contacts from the database.

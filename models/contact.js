@@ -20,9 +20,7 @@ const contactSchema = new Schema ({
                 minlength: [5, 'postal codes must be 5 numbers'],
             maxlength: [5, 'postal codes must be 5 numbers']},
     phoneNumber: {
-        type: Number,
-        maxlength: [13, 'phone numbers must be less than 13 numbers']
-    },
+        type: String},
     email: {type:String,
             required:true},
     salesFunnelStage: {
@@ -30,7 +28,7 @@ const contactSchema = new Schema ({
         enum:['awareness', 'interest', 'decision', 'action']
     },
     maxEnergyGenPotentialkW: Number,
-    peakEnergyDemandkW: Number,
+    EnergyDemandkWh: Number,
     gridOperator: {
         type: String,
         enum: ['Amprion',

@@ -1,4 +1,4 @@
-const reactDom = require('react-dom');
+
 const Contact = require('../models/contact');
 
 exports.createContact = async (req, res) => {
@@ -18,6 +18,8 @@ exports.createContact = async (req, res) => {
 
 }
 
+//route for listing all contacts 
+
 exports.listAllContacts = async (req, res) => {
     try {
         const contactList = await Contact.find();
@@ -28,6 +30,8 @@ exports.listAllContacts = async (req, res) => {
     }
 }
 
+//route for listing all private contacts
+
 exports.listAllPrivate = async (req, res) => {
     try {
         const privateContacts = await Contact.find({"customerType": "private"});
@@ -37,6 +41,8 @@ exports.listAllPrivate = async (req, res) => {
     }
 }
 
+//route for listing all commercial contacts
+
 exports.listAllCommercial = async (req, res) => {
     try {
         const commercialContacts = await Contact.find({"customerType": "commercial"});
@@ -45,6 +51,8 @@ exports.listAllCommercial = async (req, res) => {
         return res.status(400).json({message:'error!', error:error})
     }
 }
+
+//Route to edit contact
 
 exports.updateContact = async (req, res) => {
     try {
@@ -75,18 +83,17 @@ exports.updateContact = async (req, res) => {
 
 }
 
+//Delete Request
 
+exports.deleteContact = async(req, res) => {
+    try {
+        const contact = await Contact.findByIdAndDelete(req.params.id);
 
-
-//attempt to make a blanket search route - needs regex, will look at later
-// exports.search = async (req, res) => {
-//     const {params}=req;
-//     try {
-//         const customers = Contact.find(params);
-//         return res.status(200).json(customers);
-//     } catch (error) {
-//         return res.status(400).json({message:'error', error:error})
-//     }
-// }
-
-
+        if(!contact) {
+            //if contact doesn't exist
+            return res.status(404).json('contact not found');
+        }
+            return res.status(200).json('contact deleted');
+    } catch (error){
+        return res.status(500).json({message:'Error occurred', error:error}) }
+}

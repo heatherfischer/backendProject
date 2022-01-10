@@ -7,7 +7,8 @@ router.post('/add', controller.createContact);
 router.get('/list', controller.listAllContacts);
 router.get('/private', controller.listAllPrivate);
 router.get('/commercial', controller.listAllCommercial);
-// router.get('/search', controller.search);
 router.patch('/update', controller.updateContact);
+router.delete('/delete/:id', controller.deleteContact);
+
 
 module.exports = router;
